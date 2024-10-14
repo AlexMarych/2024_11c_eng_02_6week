@@ -56,7 +56,7 @@ public class PlayerBasicMovement : MonoBehaviour
         {
             _performJump = false;
             _isGrounded = false;
-            _rb.AddForce(new Vector2(0, _jumpForce), ForceMode2D.Impulse);
+            _rb.velocity = new Vector2(_rb.velocity.x, _jumpForce);
         }
     }
 
