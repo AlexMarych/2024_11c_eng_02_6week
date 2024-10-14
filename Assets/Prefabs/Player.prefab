@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7918966002409246214}
   - component: {fileID: 2280862852694612733}
   - component: {fileID: 6311048087142888326}
-  - component: {fileID: 7424440487795031975}
+  - component: {fileID: -2407678907460235090}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -149,7 +149,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7424440487795031975
+--- !u!114 &-2407678907460235090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,4 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 3
-  _jumpForce: 30
+  _jumpForce: 15
