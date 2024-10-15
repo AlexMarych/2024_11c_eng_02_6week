@@ -10,6 +10,13 @@ public class PlayerBasicMovement : MonoBehaviour
     [SerializeField] public float MoveSpeed = 3f;
     Vector2 _currentVelocity;
 
+    [SerializeField] private float _coyoteTime = 0.2f;
+    private float _coyoteTimeCounter;
+
+    [SerializeField] private float _jumpBufferTime = 0.2f;
+    private float _jumpBufferCounter;
+
+
     private bool _performJump;
     private bool _isGrounded;
     [SerializeField] private float _jumpForce;
@@ -26,10 +33,20 @@ public class PlayerBasicMovement : MonoBehaviour
         InputHorizontal = Input.GetAxisRaw("Horizontal");
         _currentVelocity = new Vector2(InputHorizontal * MoveSpeed, 0f);
 
-        if (Input.GetButtonDown("Jump") && _isGrounded)
+        if (_isGrounded) _coyoteTimeCounter = _coyoteTime;
+        else _coyoteTimeCounter -= Time.deltaTime;
+
+        if (Input.GetButtonDown("Jump")) _jumpBufferCounter = _jumpBufferTime;
+        else _jumpBufferCounter -= Time.deltaTime;
+
+        if (_jumpBufferCounter > 0 && _coyoteTimeCounter > 0f)
         {
+            _rb.velocity = new Vector2(_currentVelocity.x, _jumpForce);
             _performJump = true;
+            _coyoteTimeCounter = 0f;
+
         }
+
     }
     private void FixedUpdate()
     {
@@ -67,6 +84,8 @@ public class PlayerBasicMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        
         _isGrounded = false;
     }
+
 }
