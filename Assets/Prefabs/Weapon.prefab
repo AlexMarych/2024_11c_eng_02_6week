@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1288359295826057226}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279cdd7e28ae0c8418f2eacf55a6505f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isLoaded: 0
   _projectileOrigin: {fileID: 3986125444208055767}
   Projectile: {fileID: 3743857945840116677, guid: 1958ab1602efa424481b57bc6728801c, type: 3}
   FireCooldown: 1

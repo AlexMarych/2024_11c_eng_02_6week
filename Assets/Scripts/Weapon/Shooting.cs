@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     private MousePositionGrabber _mousePositionGrabber;
     private bool _canFire;
     private float _lastFire;
+    [SerializeField] private bool _isLoaded;
     [SerializeField] private Transform _projectileOrigin;
     [SerializeField] private GameObject Projectile;
     [SerializeField] private float FireCooldown;
@@ -16,6 +17,7 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         _mousePositionGrabber = GetComponent<MousePositionGrabber>();
+        _isLoaded = true;
     }
 
     void Update()
@@ -25,7 +27,7 @@ public class Shooting : MonoBehaviour
             _canFire = _lastFire + FireCooldown <= Time.time;
         }
 
-        else if (Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(0) && _isLoaded)
         {
             _canFire = false;
             _lastFire = Time.time;
@@ -33,5 +35,15 @@ public class Shooting : MonoBehaviour
             Vector3 direction = _mousePositionGrabber.Position - transform.position;
             createdProjectile.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y).normalized * Force;
         }
+    }
+
+    public bool IsLoaded()
+    {
+        return _isLoaded;
+    }
+
+    public void SetLoaded()
+    {
+        _isLoaded = true;
     }
 }
