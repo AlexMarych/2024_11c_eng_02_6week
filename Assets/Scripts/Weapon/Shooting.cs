@@ -8,7 +8,7 @@ public class Shooting : MonoBehaviour
     private MousePositionGrabber _mousePositionGrabber;
     private bool _canFire;
     private float _lastFire;
-    [SerializeField] private bool _isLoaded;
+    private bool _isLoaded;
     [SerializeField] private Transform _projectileOrigin;
     [SerializeField] private GameObject Projectile;
     [SerializeField] private float FireCooldown;
@@ -17,7 +17,7 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         _mousePositionGrabber = GetComponent<MousePositionGrabber>();
-        _isLoaded = true;
+        
     }
 
     void Update()
@@ -30,6 +30,7 @@ public class Shooting : MonoBehaviour
         else if (Input.GetMouseButton(0) && _isLoaded)
         {
             _canFire = false;
+            _isLoaded = false;
             _lastFire = Time.time;
             GameObject createdProjectile = Instantiate(Projectile, _projectileOrigin.position, Quaternion.identity);
             Vector3 direction = _mousePositionGrabber.Position - transform.position;

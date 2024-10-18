@@ -16,9 +16,10 @@ public class PlayerBasicMovement : MonoBehaviour
     [SerializeField] private float _jumpBufferTime = 0.2f;
     private float _jumpBufferCounter;
 
+    private bool _isGrounded;
+    [SerializeField] private float _rayLength = 1.1f;
 
     private bool _performJump;
-    private bool _isGrounded;
     [SerializeField] private float _jumpForce;
 
     private void Awake()
@@ -32,6 +33,8 @@ public class PlayerBasicMovement : MonoBehaviour
     {
         InputHorizontal = Input.GetAxisRaw("Horizontal");
         _currentVelocity = new Vector2(InputHorizontal * MoveSpeed, 0f);
+
+        _isGrounded = Physics.Raycast(transform.position, Vector3.down, _rayLength);
 
         if (_isGrounded) _coyoteTimeCounter = _coyoteTime;
         else _coyoteTimeCounter -= Time.deltaTime;
@@ -75,11 +78,6 @@ public class PlayerBasicMovement : MonoBehaviour
             _isGrounded = false;
             _rb.velocity = new Vector2(_rb.velocity.x, _jumpForce);
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        _isGrounded = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
