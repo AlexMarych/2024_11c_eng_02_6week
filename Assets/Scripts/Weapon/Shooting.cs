@@ -6,31 +6,34 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     private MousePositionGrabber _mousePositionGrabber;
+    private ReloadOnStanding _loadOnStanding;
     private bool _canFire;
     private float _lastFire;
-    private bool _isLoaded;
     [SerializeField] private Transform _projectileOrigin;
     [SerializeField] private GameObject Projectile;
     [SerializeField] private float FireCooldown;
     [SerializeField] private float Force;
 
+
     void Start()
     {
+        _loadOnStanding = GetComponent<ReloadOnStanding>();
         _mousePositionGrabber = GetComponent<MousePositionGrabber>();
-        
     }
 
     void Update()
     {
+        if(_loadOnStanding.getLoaded()) this.GetComponent<SpriteRenderer>().color = Color.red;
+        else this.GetComponent<SpriteRenderer>().color = Color.white;
+
         if (!_canFire)
         {
             _canFire = _lastFire + FireCooldown <= Time.time;
         }
-
-        else if (Input.GetMouseButton(0) && _isLoaded)
+        else if (Input.GetMouseButton(0) && _loadOnStanding.getLoaded())
         {
             _canFire = false;
-            _isLoaded = false;
+            _loadOnStanding.setLoaded();
             _lastFire = Time.time;
             GameObject createdProjectile = Instantiate(Projectile, _projectileOrigin.position, Quaternion.identity);
             Vector3 direction = _mousePositionGrabber.Position - transform.position;
@@ -38,13 +41,6 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    public bool IsLoaded()
-    {
-        return _isLoaded;
-    }
+    
 
-    public void SetLoaded()
-    {
-        _isLoaded = true;
-    }
 }
