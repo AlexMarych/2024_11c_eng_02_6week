@@ -244,7 +244,7 @@ MonoBehaviour:
   castDistance: 0.13
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!1001 &8239956548838069024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873044909457261806, guid: cbb85a006b47a8f43a5f4227068140a0, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7873044909457261806, guid: cbb85a006b47a8f43a5f4227068140a0, type: 3}
       propertyPath: m_SortingLayerID
