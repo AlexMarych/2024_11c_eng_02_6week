@@ -244,7 +244,7 @@ MonoBehaviour:
   castDistance: 0.13
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!1001 &8239956548838069024
 PrefabInstance:
   m_ObjectHideFlags: 0
