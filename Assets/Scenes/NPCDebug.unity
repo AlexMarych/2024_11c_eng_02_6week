@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 974015448}
   - component: {fileID: 974015447}
   - component: {fileID: 974015451}
+  - component: {fileID: 974015452}
   m_Layer: 0
   m_Name: FierceToothNPC
   m_TagString: Untagged
@@ -284,7 +285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6923dc173e95be2da1b964ac0bc4b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolMoveRange: 0.41
+  patrolMoveRange: 1.16
+  patrolMoveSpeed: 0.4
 --- !u!50 &974015448
 Rigidbody2D:
   serializedVersion: 4
@@ -362,7 +364,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &974015451
+--- !u!95 &974015451
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974015446}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d3e25a3edcbc7d37ae32cacf9bc9afa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &974015452
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

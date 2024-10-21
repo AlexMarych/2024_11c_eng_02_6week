@@ -6,6 +6,7 @@ using UnityEngine;
 public class FierceToothNPC : NPC
 {
     [SerializeField] private float patrolMoveRange = 1f;
+    [SerializeField] private float patrolMoveSpeed = 0.4f;
 
     private enum AIState
     {
@@ -20,6 +21,9 @@ public class FierceToothNPC : NPC
     }
 
     private Rigidbody2D body;
+    private SpriteRenderer renderer;
+    private Animator animator;
+
     private AIState state = AIState.Patrol;
     private PatrolState patrolState = PatrolState.Standing;
     private float patrolTimer = 1.5f;
@@ -30,8 +34,11 @@ public class FierceToothNPC : NPC
     public void Start()
     {
         Health = 100;
-        body = GetComponent<Rigidbody2D>();
         initialX = transform.position.x;
+
+        body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     public void Update()
@@ -49,15 +56,19 @@ public class FierceToothNPC : NPC
                             patrolTimer = 3f;
                             patrolMoveX = initialX + UnityEngine.Random.Range(-1f, 1f) * patrolMoveRange;
                             patrolMoveDirection = MathF.Sign(patrolMoveX - transform.position.x);
+
+                            animator.Play("Run");
                         }
 
                         break;
                     case PatrolState.Walking:
-                        body.velocity += patrolMoveDirection * 0.4f * Vector2.right;
+                        body.velocity += patrolMoveDirection * patrolMoveSpeed * Vector2.right;
                         if (patrolTimer <= 0f || patrolMoveDirection * (initialX - transform.position.x) < patrolMoveDirection * (initialX - patrolMoveX))
                         {
                             patrolState = PatrolState.Standing;
                             patrolTimer = UnityEngine.Random.Range(1f, 2f);
+
+                            animator.Play("Idle");
                         }
 
                         break;
@@ -69,6 +80,10 @@ public class FierceToothNPC : NPC
         }
 
         body.velocity += Vector2.down * 0.5f;
+        if (body.velocity.x != 0f)
+        {
+            renderer.flipX = body.velocity.x > 0f;
+        }
     }
 
     public void OnDrawGizmos()
