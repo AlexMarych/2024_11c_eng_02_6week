@@ -7,6 +7,7 @@ public class PlayerAxisXMovement : MonoBehaviour
     //Move using Rigidbody2d
     private Rigidbody2D _rb;
     private GroundCheck _groundCheck;
+    private SpriteRenderer _spriteRenderer;
     private float InputHorizontal;
     [SerializeField] public float MoveSpeed = 3f;
     Vector2 _currentVelocity;
@@ -16,6 +17,7 @@ public class PlayerAxisXMovement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _groundCheck = GetComponent<GroundCheck>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
  
 
@@ -24,6 +26,16 @@ public class PlayerAxisXMovement : MonoBehaviour
     {
         InputHorizontal = Input.GetAxisRaw("Horizontal");
         _currentVelocity = new Vector2(InputHorizontal * MoveSpeed, 0f);
+
+        if (InputHorizontal > 0)
+        {
+            _spriteRenderer.flipX = false;
+        }
+
+        if (InputHorizontal < 0)
+        {
+            _spriteRenderer.flipX = true;
+        }
 
     }
     private void FixedUpdate()
