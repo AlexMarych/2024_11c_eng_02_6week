@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1417455955758467353}
   - component: {fileID: 4573514851686017045}
   - component: {fileID: 7305934608428560652}
+  - component: {fileID: 4890910147591412466}
   m_Layer: 6
   m_Name: Weapon Projectile
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -95,14 +96,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3743857945840116677}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -161,3 +162,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61883cbe84f423459498e69dc74e659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4890910147591412466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743857945840116677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4287ec0440e2d6479a699214246f299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 100
+  force: 100
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
