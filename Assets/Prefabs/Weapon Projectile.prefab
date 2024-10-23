@@ -174,8 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4287ec0440e2d6479a699214246f299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 100
-  force: 100
-  playerLayer:
+  radius: 1
+  force: 0.025
+  PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
+  Explosion: {fileID: 5932848639391656489, guid: ca7998d787f4651b79fded3a2b120f74, type: 3}

@@ -9,7 +9,7 @@ public class ReloadOnStanding : MonoBehaviour
     [SerializeField] private float reloadTime = 2f;
     private float reloadCounter;
 
-    bool _isLoaded;
+    public bool Loaded { get; set; }
 
     void Start()
     {
@@ -19,12 +19,12 @@ public class ReloadOnStanding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
     {
-        if (_groundCheck.isGrounded() && !_isLoaded)
+        if (_groundCheck.Grounded && !Loaded)
         {
             if (reloadCounter < reloadTime)
             {
@@ -32,20 +32,10 @@ public class ReloadOnStanding : MonoBehaviour
             }
             else
             {
-                _isLoaded = true;
-                
+                Loaded = true;
+
             }
         }
-        else reloadCounter = 0f; 
-    }
-
-    public bool getLoaded()
-    {
-        return _isLoaded;
-    }
-
-    public void setLoaded()
-    {
-        _isLoaded = false;
+        else reloadCounter = 0f;
     }
 }

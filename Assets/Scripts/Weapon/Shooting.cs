@@ -23,17 +23,17 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        if(_loadOnStanding.getLoaded()) this.GetComponent<SpriteRenderer>().color = Color.red;
+        if (_loadOnStanding.Loaded) this.GetComponent<SpriteRenderer>().color = Color.red;
         else this.GetComponent<SpriteRenderer>().color = Color.white;
 
         if (!_canFire)
         {
             _canFire = _lastFire + FireCooldown <= Time.time;
         }
-        else if (Input.GetMouseButton(0) && _loadOnStanding.getLoaded())
+        else if (Input.GetMouseButton(0) && _loadOnStanding.Loaded)
         {
             _canFire = false;
-            _loadOnStanding.setLoaded();
+            _loadOnStanding.Loaded = true;
             _lastFire = Time.time;
             GameObject createdProjectile = Instantiate(Projectile, _projectileOrigin.position, Quaternion.identity);
             Vector3 direction = _mousePositionGrabber.Position - transform.position;
@@ -41,6 +41,6 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    
+
 
 }
