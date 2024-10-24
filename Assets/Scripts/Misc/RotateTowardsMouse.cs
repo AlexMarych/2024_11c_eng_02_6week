@@ -6,6 +6,6 @@ public class RotateTowardsMouse : MonoBehaviour
     {
         Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotationZ = Mathf.Atan2(position.y, position.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rotationZ);
+        transform.eulerAngles = new Vector3(0, 0, rotationZ);
     }
 }
