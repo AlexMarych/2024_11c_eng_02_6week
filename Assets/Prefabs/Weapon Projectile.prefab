@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,9 +96,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3743857945840116677}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -174,8 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4287ec0440e2d6479a699214246f299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
-  force: 40
-  playerLayer:
+  radius: 1
+  force: 0.025
+  PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
+  Explosion: {fileID: 5932848639391656489, guid: ca7998d787f4651b79fded3a2b120f74, type: 3}

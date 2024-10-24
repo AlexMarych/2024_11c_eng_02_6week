@@ -7,7 +7,7 @@ public class PlayerJump : MonoBehaviour
     private Rigidbody2D _rb;
     private GroundCheck _groundCheck;
 
-    
+
     [SerializeField] private float _jumpTime;
     [SerializeField] private float _jumpMuliplire = 1;
 
@@ -31,14 +31,14 @@ public class PlayerJump : MonoBehaviour
         gravityVector = new Vector2(0, -Physics2D.gravity.y);
     }
 
-    
+
     void Update()
     {
-        
-        if (_groundCheck.isGrounded())
+
+        if (_groundCheck.Grounded)
         {
             isGrounded = true;
-            coyoteCounter = 0f; 
+            coyoteCounter = 0f;
         }
         else
         {
@@ -52,12 +52,12 @@ public class PlayerJump : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             isGrounded = false;
-            _rb.velocity = new Vector2(_rb.velocity.x, _jumpForce);
+            _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
             isJumping = true;
             jumpCounter = 0;
         }
 
-        if (_rb.velocity.y>0 && isJumping)
+        if (_rb.velocity.y > 0 && isJumping)
         {
             jumpCounter += Time.deltaTime;
             if (jumpCounter > _jumpTime) isJumping = false;
@@ -65,7 +65,7 @@ public class PlayerJump : MonoBehaviour
             float t = jumpCounter / _jumpTime;
             float currentJumpMultiplire = _jumpMuliplire;
 
-            if( t > 0.5f) currentJumpMultiplire = _jumpMuliplire * ( 1 - t );
+            if (t > 0.5f) currentJumpMultiplire = _jumpMuliplire * (1 - t);
 
 
             _rb.velocity += gravityVector * currentJumpMultiplire * Time.deltaTime;
