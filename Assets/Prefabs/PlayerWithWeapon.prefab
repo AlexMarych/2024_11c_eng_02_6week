@@ -240,11 +240,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce376ba3492b219468c6c635aebe2358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxSize: {x: 0.18, y: 0.06}
-  castDistance: 0.13
-  groundLayer:
+  BoxSize: {x: 0, y: 0}
+  YOffset: 0
+  GroundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!1 &6979603925077766525
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a03c86c044dbb4bb7e705cdfe5d89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minimumAccumulatedAngle: 270
+  _minimumRequiredAngle: 270
   Rotated: 1
 --- !u!1001 &8239956548838069024
 PrefabInstance:
