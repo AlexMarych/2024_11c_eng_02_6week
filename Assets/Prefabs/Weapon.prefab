@@ -10,10 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3986125444208055767}
   - component: {fileID: 7873044909457261806}
-  - component: {fileID: 8354384315357744001}
-  - component: {fileID: 117594675145454037}
-  - component: {fileID: 1288359295826057226}
-  - component: {fileID: -6253149135617708705}
+  - component: {fileID: 3074943687100875867}
+  - component: {fileID: 5189057219103322571}
   m_Layer: 9
   m_Name: Weapon
   m_TagString: Weapon
@@ -88,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8354384315357744001
+--- !u!114 &3074943687100875867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,39 +95,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3315770038777964416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cda3bfe1f437f4a48a957818c93b505b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Position: {x: 0, y: 0, z: 0}
---- !u!114 &117594675145454037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3315770038777964416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bfbcea47bb478d4896b329834563512, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1288359295826057226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3315770038777964416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 279cdd7e28ae0c8418f2eacf55a6505f, type: 3}
+  m_Script: {fileID: 11500000, guid: d26878c982331cb46beea31906e6ff26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileOrigin: {fileID: 3986125444208055767}
-  Projectile: {fileID: 3743857945840116677, guid: 1958ab1602efa424481b57bc6728801c, type: 3}
-  FireCooldown: 1
-  Force: 4
---- !u!114 &-6253149135617708705
+  _projectile: {fileID: 3743857945840116677, guid: 1958ab1602efa424481b57bc6728801c, type: 3}
+  Force: 10
+--- !u!114 &5189057219103322571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +110,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3315770038777964416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37b599de69335364f92ac4e05abd2166, type: 3}
+  m_Script: {fileID: 11500000, guid: 29de840b512ef6245a478023e6e90ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reloadTime: 2
