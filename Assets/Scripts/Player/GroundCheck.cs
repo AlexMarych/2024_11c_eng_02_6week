@@ -20,4 +20,9 @@ public class GroundCheck : MonoBehaviour
     {
         Gizmos.DrawWireCube(transform.position - transform.up * YOffset, BoxSize);
     }
+
+    public bool IsGrounded()
+    { 
+        return Grounded; 
+    }
 }
