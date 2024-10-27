@@ -1468,7 +1468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8296209228863162590, guid: dd11c07476e87744d9b7d91c664afc11, type: 3}
       propertyPath: _minimumRequiredAngle
-      value: 270
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 8296209228863162590, guid: dd11c07476e87744d9b7d91c664afc11, type: 3}
       propertyPath: MinimumAccumulatedAngle
