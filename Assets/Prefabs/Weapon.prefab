@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileOrigin: {fileID: 3986125444208055767}
   _projectile: {fileID: 3743857945840116677, guid: 1958ab1602efa424481b57bc6728801c, type: 3}
-  Force: 10
+  _force: 5
 --- !u!114 &5189057219103322571
 MonoBehaviour:
   m_ObjectHideFlags: 0

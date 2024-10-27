@@ -1060,6 +1060,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6410399283205363579, guid: dd11c07476e87744d9b7d91c664afc11, type: 3}
+      propertyPath: _force
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6979603925077766525, guid: dd11c07476e87744d9b7d91c664afc11, type: 3}
       propertyPath: m_Name
       value: RotationAnchor
