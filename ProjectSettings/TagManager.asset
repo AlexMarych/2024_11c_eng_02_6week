@@ -47,3 +47,12 @@ TagManager:
   - name: Crosshair
     uniqueID: 2653011287
     locked: 0
+  - name: Character
+    uniqueID: 2663906147
+    locked: 0
+  - name: Water
+    uniqueID: 1303627777
+    locked: 0
+  - name: Platforms
+    uniqueID: 3196714611
+    locked: 0
