@@ -6,6 +6,7 @@ public class TrackScore : MonoBehaviour
     private int _silverCoinCount;
     public int LastGoldCoinCount;
     public int GoldCoinCount;
+    private FadeAlpha _fadeAlpha;
 
     public void IncrementCoinCount(Collectable.Type Type) 
     {
@@ -14,8 +15,11 @@ public class TrackScore : MonoBehaviour
             case Collectable.Type.Silver:
                 _silverCoinCount++;
                 return;
+
             case Collectable.Type.Gold:
                 GoldCoinCount++;
+                GetComponent<FadeAlpha>().StartFade();
+                GetComponent<CanvasTextEditor>().SetText(GoldCoinCount.ToString());
                 return;
         }
     }

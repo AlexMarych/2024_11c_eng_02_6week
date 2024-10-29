@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3975341105993334555}
   - component: {fileID: 8095882689386900034}
+  - component: {fileID: 1777444204185928258}
+  - component: {fileID: 4633176349600046292}
+  - component: {fileID: 933422422243448746}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: ScoreManager
@@ -45,3 +48,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 0
+  LastGoldCoinCount: 0
+  GoldCoinCount: 0
+--- !u!114 &1777444204185928258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5015003973066800003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3efd9eaeba7394598af27e9a05c867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvasGroup: {fileID: 0}
+  _speed: 0.01
+--- !u!114 &4633176349600046292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5015003973066800003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f61788e51c4afc4da97f5a3ce5aec36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cooldown: 3
+--- !u!114 &933422422243448746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5015003973066800003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf2ae91792170340aae286396785825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
