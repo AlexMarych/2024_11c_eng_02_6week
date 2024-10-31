@@ -239,7 +239,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 13
     m_Sprites:
-    - {fileID: 515807162, guid: 56bfd5cef485b4349b7c7ece6e1f9db1, type: 3}
+    - {fileID: 21300000, guid: ca49261f644a68f49b938ca3fb2f4a43, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -247,11 +247,11 @@ MonoBehaviour:
     m_Output: 0
     m_ColliderType: 1
     m_RandomTransform: 0
-    m_Neighbors: 0100000002000000010000000100000001000000
+    m_Neighbors: 0100000001000000010000000100000002000000
     m_NeighborPositions:
-    - {x: -1, y: 0, z: 0}
-    - {x: 1, y: 1, z: 0}
     - {x: 0, y: 1, z: 0}
+    - {x: -1, y: 0, z: 0}
     - {x: 1, y: 0, z: 0}
     - {x: 0, y: -1, z: 0}
+    - {x: -1, y: 1, z: 0}
     m_RuleTransform: 2
