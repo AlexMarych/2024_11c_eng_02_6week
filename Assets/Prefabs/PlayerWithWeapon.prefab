@@ -343,6 +343,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4975276003196618487}
     - target: {fileID: 3074943687100875867, guid: cbb85a006b47a8f43a5f4227068140a0, type: 3}
+      propertyPath: _particles
+      value: 
+      objectReference: {fileID: 8327322325074800633, guid: 1a25f280a1c337918bc24a865cb6b627, type: 3}
+    - target: {fileID: 3074943687100875867, guid: cbb85a006b47a8f43a5f4227068140a0, type: 3}
       propertyPath: _projectileOrigin
       value: 
       objectReference: {fileID: 4975276003196618487}
