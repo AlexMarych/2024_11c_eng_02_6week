@@ -18,8 +18,8 @@ public class TrackScore : MonoBehaviour
 
             case Collectable.Type.Gold:
                 GoldCoinCount++;
-                GetComponent<FadeAlpha>().StartFade();
                 GetComponent<CanvasTextEditor>().SetText(GoldCoinCount.ToString());
+                GetComponent<FadeAlpha>().StartFade();
                 return;
         }
     }
