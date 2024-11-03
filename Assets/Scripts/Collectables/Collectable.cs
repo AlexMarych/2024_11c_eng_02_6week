@@ -7,18 +7,14 @@ public class Collectable : MonoBehaviour
         Silver = 10,
         Gold = 50
     }
-    [SerializeField] Type type;
-    private GameObject _scoreManager;
-    void Start()
-    {
-        _scoreManager = GameObject.FindGameObjectWithTag("ScoreManager");
-    }
+    [SerializeField] private Type type;
 
     //Increments the coin count tracked in the TrackScore script of our ScoreManager object in the scene
     public void Collect() 
     {
-        if (_scoreManager != null)
-            _scoreManager.GetComponent<TrackScore>().IncrementCoinCount(type);
+        GameObject scoreManager = GameObject.FindGameObjectWithTag("ScoreManager");
+        if (scoreManager != null)
+            scoreManager.GetComponent<TrackScore>().IncrementCoinCount(type);
         Destroy(gameObject);
     }
 }
