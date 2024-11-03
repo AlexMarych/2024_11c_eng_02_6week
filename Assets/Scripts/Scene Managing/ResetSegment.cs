@@ -28,6 +28,8 @@ public class ResetSegment : MonoBehaviour
         if (player != null)
             Destroy(player);
         GameObject playerSpawner = GameObject.Find(_currentSegmentTracking.CurrentSegmentName + "PlayerSpawner");
+        if (playerSpawner == null)
+            playerSpawner = GameObject.Find(_currentSegmentTracking.CurrentSegmentName + "PlayerWithWeaponSpawner");
         if (playerSpawner != null) 
         {
             Spawner spawner = playerSpawner.GetComponent<Spawner>();
