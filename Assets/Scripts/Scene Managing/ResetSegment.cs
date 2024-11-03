@@ -16,7 +16,7 @@ public class ResetSegment : MonoBehaviour
             Reset();
     }
 
-    private void Reset()
+    public void Reset()
     {
         ResetPlayer();
         ResetGoldCoin();
