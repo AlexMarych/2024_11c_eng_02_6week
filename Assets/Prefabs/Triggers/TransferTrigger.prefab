@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6541924054633280920}
   - component: {fileID: 4249325007158975090}
   m_Layer: 11
-  m_Name: Transfer
+  m_Name: TransferTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

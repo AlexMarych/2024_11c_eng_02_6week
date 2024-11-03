@@ -22,7 +22,7 @@ TagManager:
   - Ground
   - Weapon
   - Spawner
-  - Transfer
+  - TransferTrigger
   - ResetTrigger
   - 
   - 

@@ -262,7 +262,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 510517390637203352, guid: 22a7f4e7460df854c823ba6debf6e414, type: 3}
       propertyPath: m_Name
-      value: Debug1Transfer
+      value: Debug1TransferTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 6541924054633280920, guid: 22a7f4e7460df854c823ba6debf6e414, type: 3}
       propertyPath: _segmentName
@@ -1251,7 +1251,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 510517390637203352, guid: 22a7f4e7460df854c823ba6debf6e414, type: 3}
       propertyPath: m_Name
-      value: Debug2Transfer
+      value: Debug2TransferTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 6541924054633280920, guid: 22a7f4e7460df854c823ba6debf6e414, type: 3}
       propertyPath: _segmentName
