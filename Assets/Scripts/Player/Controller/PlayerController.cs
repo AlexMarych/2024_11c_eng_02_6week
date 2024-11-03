@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private CapsuleCollider2D col;
+    private BoxCollider2D col;
     private FrameInput frameInput;
     private Vector2 frameVelocity;
     private float time;
@@ -29,13 +29,13 @@ public class PlayerController : MonoBehaviour
     public float CoyoteTime = .15f; //Coyote jump window
     
     
-    public LayerMask PlayerLayer;
+    public LayerMask GroundLayer;
     private bool cachedQueriesStartInColliders;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<CapsuleCollider2D>();
+        col = GetComponent<BoxCollider2D>();
         cachedQueriesStartInColliders = Physics2D.queriesStartInColliders;
     }
 
@@ -82,7 +82,8 @@ public class PlayerController : MonoBehaviour
     {
         Physics2D.queriesStartInColliders = false;
 
-        bool groundHit = Physics2D.CapsuleCast(col.bounds.center, col.size, col.direction, 0, Vector2.down, GrounderDistance, PlayerLayer);
+        //bool groundHit = Physics2D.CapsuleCast(col.bounds.center, col.size, col.direction, 0, Vector2.down, GrounderDistance, GroundLayer);
+        bool groundHit = Physics2D.BoxCast(col.bounds.center, col.size, 0, Vector2.down, GrounderDistance, GroundLayer);
         
         //landed on the ground
         if (!grounded && groundHit)
