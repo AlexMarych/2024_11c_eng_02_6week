@@ -6,26 +6,39 @@ public class TransferToSegment : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject gameObject = other.gameObject;
-        if (gameObject.CompareTag("Player")) 
+        GameObject anchor = GameObject.Find(_segmentName + "CameraAnchor");
+        if (anchor != null)
         {
-            GameObject segmentManager = GameObject.FindGameObjectWithTag("SegmentManager");
-            if (segmentManager != null) 
-            {
-                GameObject scoreManager = GameObject.FindGameObjectWithTag("ScoreManager");
-                if (scoreManager != null) 
-                {
-                    TrackScore trackScore = scoreManager.GetComponent<TrackScore>();
-                    if (trackScore.GoldCoinCount > trackScore.LastGoldCoinCount) 
-                    {
-                        SpawnerDisabler spawnerDisabler = segmentManager.GetComponent<SpawnerDisabler>();
-                        spawnerDisabler.DisableCurrentSegmentGoldCoinSpawner();
-                        trackScore.SaveGoldCoinCount();
-                    }
-                }
-                CurrentSegmentTracking currentSegmentTracking = segmentManager.GetComponent<CurrentSegmentTracking>();
-                currentSegmentTracking.CurrentSegmentName = _segmentName;
-            }
+            Camera.main.transform.position = anchor.transform.position;
+        }
+        
+        GameObject gameObject = other.gameObject;
+        if (!gameObject.CompareTag("Player")) 
+        {
+            return;
+        }
+        
+        GameObject segmentManager = GameObject.FindGameObjectWithTag("SegmentManager");
+        if (segmentManager == null)
+        {
+            return;
+        }
+        
+        CurrentSegmentTracking currentSegmentTracking = segmentManager.GetComponent<CurrentSegmentTracking>();
+        currentSegmentTracking.CurrentSegmentName = _segmentName;
+            
+        GameObject scoreManager = GameObject.FindGameObjectWithTag("ScoreManager");
+        if (scoreManager == null)
+        {
+            return;
+        }
+        
+        TrackScore trackScore = scoreManager.GetComponent<TrackScore>();
+        if (trackScore.GoldCoinCount > trackScore.LastGoldCoinCount) 
+        {
+            SpawnerDisabler spawnerDisabler = segmentManager.GetComponent<SpawnerDisabler>();
+            spawnerDisabler.DisableCurrentSegmentGoldCoinSpawner();
+            trackScore.SaveGoldCoinCount();
         }
     }
 }

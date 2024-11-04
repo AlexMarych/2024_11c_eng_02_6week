@@ -47,6 +47,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: UI
+    uniqueID: 3620413049
+    locked: 0
+  - name: Background
+    uniqueID: 4282892985
+    locked: 0
+  - name: BackgroundGrid
+    uniqueID: 381610117
+    locked: 0
   - name: Crosshair
     uniqueID: 2653011287
     locked: 0
@@ -58,6 +67,9 @@ TagManager:
     locked: 0
   - name: Platforms
     uniqueID: 3196714611
+    locked: 0
+  - name: Ground
+    uniqueID: 1114682319
     locked: 0
   - name: Trees
     uniqueID: 2463762319

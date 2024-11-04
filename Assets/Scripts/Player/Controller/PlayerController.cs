@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
     public float AirDeceleration = 30; //deceleration in air only after stopping input mid-air
     public float JumpBuffer = .2f; //time to consider the input before actually touching the ground to jump
     public float JumpEndEarlyGravityModifier = 3; //The gravity multiplier added when jump is released early
-    public float JumpApexThreshold = 36f;
-    public float ApexBonus = 0.2f;
+    public float JumpApexThreshold = 36f; // Should be the same as jump power
+    public float ApexBonus = 100f;
     [Range(0f, -10f)]
     public float GroundingForce = -1.5f; //A constant downward force applied while grounded. Helps with apex points
     public float CoyoteTime = .15f; //Coyote jump window
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     #region GroundCheck
 
     private float frameLeftGrounded = float.MinValue;
-    private bool grounded;
+    private bool grounded; //true if the player is on the ground 
 
     private void GroundCheck()
     {

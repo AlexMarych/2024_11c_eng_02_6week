@@ -8,7 +8,7 @@ public class WeaponProjectile : MonoBehaviour
     [SerializeField] private float force = 1;
     public LayerMask PlayerLayer;
     public GameObject Explosion;
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var collider2Ds = Physics2D.OverlapCircleAll(transform.position, radius, PlayerLayer);
