@@ -13,6 +13,7 @@ public class PlayerAxisXMovement : MonoBehaviour
     private GroundCheck _groundCheck;
     private float InputHorizontal;
     private PlayerSFXController _playerSFXController;
+    private bool isMoving;
 
 
     private void Awake()
@@ -42,15 +43,22 @@ public class PlayerAxisXMovement : MonoBehaviour
         if (InputHorizontal != 0)
         {
             _rb.velocity = new Vector2(InputHorizontal * MoveSpeed, _rb.velocity.y);
-            _playerSFXController.PlayRun();
+            isMoving = true;
+            
         }
         else if (!_groundCheck.Grounded)
         {
-            _playerSFXController.Stop();
+            isMoving = false;
         }
         else
         {
             _rb.velocity = new Vector2(0f, _rb.velocity.y);
+            isMoving = false ;
         }
+    }
+    
+    public bool IsMoving()
+    {
+        return isMoving;
     }
 }
