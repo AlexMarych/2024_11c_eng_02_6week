@@ -9,13 +9,13 @@ public class PlayerSFXController : MonoBehaviour
     public AudioClip Jump;
     public AudioClip Run;
 
-    private Rigidbody _rb;
-    private GroundCheck _check;
+    private PlayerJump _jump;
+    private PlayerAxisXMovement _run;
 
-    private void Start()
+    private void Awake()
     {
-        _rb = GetComponent<Rigidbody>();
-        _check = GetComponent<GroundCheck>();
+        _jump = GetComponent<PlayerJump>();
+        _run = GetComponent<PlayerAxisXMovement>();
     }
 
     public void PlayRun()
@@ -30,8 +30,15 @@ public class PlayerSFXController : MonoBehaviour
         Source.Play();
     }
 
-    public void Stop()
+    void Update()
     {
-        Source.Stop();
+        if (_run.IsMoving())
+        {
+            PlayRun();
+        }
+        else if (_jump.IsJumping())
+        {
+            PlayJump();
+        }
     }
 }
