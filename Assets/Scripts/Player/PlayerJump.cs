@@ -16,6 +16,8 @@ public class PlayerJump : MonoBehaviour
 
     bool isGrounded;
 
+    private PlayerSFXController _playerSFXController;
+
     [SerializeField] private float _coyoteTime = 0.2f;
     float coyoteCounter;
 
@@ -29,6 +31,7 @@ public class PlayerJump : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _groundCheck = GetComponent<GroundCheck>();
         gravityVector = new Vector2(0, -Physics2D.gravity.y);
+        _playerSFXController = GetComponent<PlayerSFXController>();
     }
 
 
@@ -55,6 +58,7 @@ public class PlayerJump : MonoBehaviour
             _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
             isJumping = true;
             jumpCounter = 0;
+            _playerSFXController.PlayJump();
         }
 
         if (_rb.velocity.y > 0 && isJumping)
