@@ -65,6 +65,9 @@ TagManager:
   - name: Water
     uniqueID: 1303627777
     locked: 0
+  - name: Light
+    uniqueID: 86076605
+    locked: 0
   - name: Platforms
     uniqueID: 3196714611
     locked: 0
