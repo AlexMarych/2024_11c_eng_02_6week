@@ -5,10 +5,11 @@ public class CannonWeapon : MonoBehaviour
 {
     private SpawnProjectileWithVelocity _spawnProjectileWithVelocity;
     private FullRotationCheck _fullRotationCheck;
-
+    private CannonSFXController _cannonSFXController;
 
     void Start()
     {
+        _cannonSFXController = GetComponent<CannonSFXController>();
         _spawnProjectileWithVelocity = GetComponent<SpawnProjectileWithVelocity>();
         _fullRotationCheck = GetComponentInParent<FullRotationCheck>();
     }
@@ -27,6 +28,8 @@ public class CannonWeapon : MonoBehaviour
         {
             _fullRotationCheck.StartNewCheckFromDirection(direction);
             _spawnProjectileWithVelocity.Spawn(direction);
+            _cannonSFXController.PlayFire();
+
         }
     }
 }
