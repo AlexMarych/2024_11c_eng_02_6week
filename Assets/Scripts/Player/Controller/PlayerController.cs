@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     #region GroundCheck
 
     private float frameLeftGrounded = float.MinValue;
-    private bool grounded;
+    private bool grounded; //true if the player is on the ground 
 
     private void GroundCheck()
     {
