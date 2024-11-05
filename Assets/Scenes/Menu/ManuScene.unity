@@ -251,7 +251,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PrototypeV3
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &446852580
@@ -303,8 +303,8 @@ GameObject:
   - component: {fileID: 534559970}
   - component: {fileID: 534559969}
   - component: {fileID: 534559971}
-  m_Layer: 0
-  m_Name: 1
+  m_Layer: 5
+  m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -348,9 +348,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -12074311
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1c845699bda902d41a4b813f7479b962, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 538803417}
   - component: {fileID: 538803416}
   - component: {fileID: 538803415}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Big Clouds (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,9 +468,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -12074311
-  m_SortingLayer: 2
-  m_SortingOrder: -2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: db6389f65995792458f93e6c85659998, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -491,7 +491,7 @@ Transform:
   m_GameObject: {fileID: 538803414}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.117, y: 1.1923, z: 0}
+  m_LocalPosition: {x: 27.62, y: 1.14, z: 0}
   m_LocalScale: {x: 1.3251941, y: 1.3251942, z: 1.3251942}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 587161236}
   - component: {fileID: 587161235}
   - component: {fileID: 587161237}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Small Cloud 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 703355013}
   - component: {fileID: 703355014}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,9 +799,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -12074311
-  m_SortingLayer: 2
-  m_SortingOrder: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6654eff39958b8e44b426405880875fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -824,7 +824,7 @@ GameObject:
   - component: {fileID: 770481362}
   - component: {fileID: 770481361}
   - component: {fileID: 770481363}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Big Clouds (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -869,9 +869,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -12074311
-  m_SortingLayer: 2
-  m_SortingOrder: -2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: db6389f65995792458f93e6c85659998, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1322,7 +1322,7 @@ GameObject:
   - component: {fileID: 1182372206}
   - component: {fileID: 1182372205}
   - component: {fileID: 1182372207}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Small Cloud 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2267,7 +2267,7 @@ GameObject:
   - component: {fileID: 1520536462}
   - component: {fileID: 1520536461}
   - component: {fileID: 1520536463}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Small Cloud 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2312,9 +2312,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -12074311
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 03189e14d08ff0642a69896523542205, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2667,7 +2667,7 @@ GameObject:
   - component: {fileID: 1975475252}
   - component: {fileID: 1975475251}
   - component: {fileID: 1975475250}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Big Clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2725,9 +2725,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -12074311
-  m_SortingLayer: 2
-  m_SortingOrder: -2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: db6389f65995792458f93e6c85659998, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2748,7 +2748,7 @@ Transform:
   m_GameObject: {fileID: 1975475249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.6048, y: 1.1923, z: 0}
+  m_LocalPosition: {x: 11.44, y: 1.09, z: 0}
   m_LocalScale: {x: 1.3251941, y: 1.3251942, z: 1.3251942}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2765,6 +2765,22 @@ PrefabInstance:
     - target: {fileID: 2488752699056137697, guid: 613e5e5c4908dc548b13d86c2cf6028f, type: 3}
       propertyPath: m_Name
       value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488752699056137697, guid: 613e5e5c4908dc548b13d86c2cf6028f, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849683931151739429, guid: 613e5e5c4908dc548b13d86c2cf6028f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849683931151739429, guid: 613e5e5c4908dc548b13d86c2cf6028f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849683931151739429, guid: 613e5e5c4908dc548b13d86c2cf6028f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3886705324480315172, guid: 613e5e5c4908dc548b13d86c2cf6028f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2806,6 +2822,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4323762794965011442, guid: 613e5e5c4908dc548b13d86c2cf6028f, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2821,7 +2841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2143768861}
   - component: {fileID: 2143768860}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BG Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2900,8 +2920,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1480555407}
-  - {fileID: 2129112915}
-  - {fileID: 534559970}
   - {fileID: 2143768861}
   - {fileID: 1975475252}
   - {fileID: 538803417}
@@ -2909,6 +2927,8 @@ SceneRoots:
   - {fileID: 1520536462}
   - {fileID: 1182372206}
   - {fileID: 587161236}
+  - {fileID: 534559970}
+  - {fileID: 2129112915}
   - {fileID: 1477590299}
   - {fileID: 1325729558}
   - {fileID: 1407774250}
