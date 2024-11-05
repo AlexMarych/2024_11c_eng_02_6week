@@ -11,6 +11,7 @@ TagManager:
   - GoldCoinHUD
   - SegmentManager
   - Pause
+  - Cursor
   layers:
   - Default
   - TransparentFX

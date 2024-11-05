@@ -7,11 +7,14 @@ public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseView;
     [SerializeField] private GameObject _approvalView;
+    [SerializeField] private GameObject _cursorManager;
+    private CursorManager _cursor;
     private GameObject _cannon;
     private bool isPaused;
 
     private void Awake()
     {
+        _cursorManager = GameObject.FindGameObjectWithTag("Cursor");
         _cannon = GameObject.FindGameObjectWithTag("Weapon");
         _pauseView.SetActive(false);
         _approvalView.SetActive(false);
@@ -28,6 +31,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Pause()
     {
+        _cursorManager.SetActive(false);
         _cannon.SetActive(false);
         _pauseView.SetActive(true);
         Time.timeScale = 0f;
@@ -36,6 +40,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Resume()
     {
+        _cursorManager.SetActive(true);
         _cannon.SetActive(true);
         _pauseView.SetActive(false);
         Time.timeScale = 1.0f;
