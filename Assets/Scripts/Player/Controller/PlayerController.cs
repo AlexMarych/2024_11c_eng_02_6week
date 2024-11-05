@@ -84,6 +84,9 @@ public class PlayerController : MonoBehaviour
 
         //bool groundHit = Physics2D.CapsuleCast(col.bounds.center, col.size, col.direction, 0, Vector2.down, GrounderDistance, GroundLayer);
         bool groundHit = Physics2D.BoxCast(col.bounds.center, col.size, 0, Vector2.down, GrounderDistance, GroundLayer);
+        bool ceilingHit = Physics2D.BoxCast(col.bounds.center, col.size, 0, Vector2.up, GrounderDistance, GroundLayer);
+        
+        if (ceilingHit) frameVelocity.y = Mathf.Min(0, frameVelocity.y);
         
         //landed on the ground
         if (!grounded && groundHit)
@@ -190,6 +193,16 @@ public class PlayerController : MonoBehaviour
     #endregion
     
     private void ApplyMovement() => rb.velocity = frameVelocity;
+
+    public void SetFrameVelocity(Vector2 newVelocity) //temporary
+    {
+        frameVelocity += newVelocity;
+    }
+
+    public bool IsGrounded()
+    {
+        return grounded;
+    }
 
 
     private struct FrameInput

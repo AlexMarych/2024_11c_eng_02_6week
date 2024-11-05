@@ -83,4 +83,9 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
+    public bool IsJumping()
+    {
+        return isJumping;
+    }
+
 }

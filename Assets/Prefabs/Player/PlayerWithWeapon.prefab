@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4261183473630264630
 Transform:
   m_ObjectHideFlags: 0
@@ -75,8 +75,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.19, y: 0.25}
+  m_Offset: {x: 0, y: 0.07}
+  m_Size: {x: 0.81, y: 0.95}
   m_Direction: 0
 --- !u!50 &4472865506289673155
 Rigidbody2D:
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.035907798
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3986125444208055767, guid: cbb85a006b47a8f43a5f4227068140a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 3986125444208055767, guid: cbb85a006b47a8f43a5f4227068140a0, type: 3}
       propertyPath: m_LocalPosition.y
