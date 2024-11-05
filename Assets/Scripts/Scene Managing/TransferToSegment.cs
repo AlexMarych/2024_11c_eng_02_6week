@@ -6,16 +6,16 @@ public class TransferToSegment : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject anchor = GameObject.Find(_segmentName + "CameraAnchor");
-        if (anchor != null)
-        {
-            Camera.main.transform.position = anchor.transform.position;
-        }
-        
         GameObject gameObject = other.gameObject;
         if (!gameObject.CompareTag("Player")) 
         {
             return;
+        }
+
+        GameObject anchor = GameObject.Find(_segmentName + "CameraAnchor");
+        if (anchor != null)
+        {
+            Camera.main.transform.position = anchor.transform.position;
         }
         
         GameObject segmentManager = GameObject.FindGameObjectWithTag("SegmentManager");
