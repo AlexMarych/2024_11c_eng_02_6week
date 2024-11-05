@@ -5,40 +5,54 @@ using UnityEngine;
 
 public class PlayerSFXController : MonoBehaviour
 {
-    public AudioSource Source;
-    public AudioClip Jump;
-    public AudioClip Run;
+    public AudioSource Source_Run;
+    public AudioSource Source_Jump;
 
-    private PlayerJump _jump;
-    private PlayerAxisXMovement _run;
+    
+    private PlayerController _movment_alt;
+    
+    //private PlayerJump _jump;
+    
+    //private PlayerAxisXMovement _run;
 
     private void Awake()
     {
-        _jump = GetComponent<PlayerJump>();
-        _run = GetComponent<PlayerAxisXMovement>();
+        _movment_alt = GetComponent<PlayerController>();
+        //_jump = GetComponent<PlayerJump>();
+        //_run = GetComponent<PlayerAxisXMovement>();
     }
 
     public void PlayRun()
     {
-        Source.clip = Run;
-        Source.Play();
+        if (!Source_Run.isPlaying && !Source_Jump.isPlaying)
+        {
+            Source_Run.Play();
+        }
     }
 
     public void PlayJump() 
-    {    
-        Source.clip = Jump;
-        Source.Play();
+    {
+        if (!Source_Jump.isPlaying)
+        {
+            Source_Run.Stop();
+            Source_Jump.Play();
+        }
     }
 
     void Update()
     {
-        if (_run.IsMoving())
+        if (_movment_alt.IsMoving() && _movment_alt.IsGrounded())
         {
             PlayRun();
         }
-        else if (_jump.IsJumping())
+        else if (_movment_alt.IsJumping())
         {
             PlayJump();
+        }
+        else
+        {
+            Source_Run.Stop();
+            Source_Jump.Stop();
         }
     }
 }
