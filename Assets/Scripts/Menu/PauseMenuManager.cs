@@ -7,10 +7,12 @@ public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseView;
     [SerializeField] private GameObject _approvalView;
+    private GameObject _cannon;
     private bool isPaused;
 
     private void Awake()
     {
+        _cannon = GameObject.FindGameObjectWithTag("Weapon");
         _pauseView.SetActive(false);
         _approvalView.SetActive(false);
     }
@@ -21,10 +23,12 @@ public class PauseMenuManager : MonoBehaviour
         {
             Pause();
         }
+        else if (Input.GetKeyDown(KeyCode.Escape)) Resume();
     }
 
     public void Pause()
     {
+        _cannon.SetActive(false);
         _pauseView.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -32,6 +36,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Resume()
     {
+        _cannon.SetActive(true);
         _pauseView.SetActive(false);
         Time.timeScale = 1.0f;
         isPaused = false;
