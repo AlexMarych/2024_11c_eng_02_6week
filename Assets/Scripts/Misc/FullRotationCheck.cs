@@ -15,22 +15,22 @@ public class FullRotationCheck : MonoBehaviour
 
     void Update()
     {
-        // if (_isActive) 
-        // {
-        //     Vector3 dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
-        //     _angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //     float angleDelta = _lastAngle - _angle;
-        //     if (angleDelta >= -30f && angleDelta <= 30f)
-        //         _accumulatedAngle += _lastAngle - _angle;
-        //     _lastAngle = _angle;
-        //     if (_accumulatedAngle >= _minimumRequiredAngle || _accumulatedAngle <= -_minimumRequiredAngle) 
-        //     {
-        //         Rotated = true;
-        //         _isActive = false;
-        //     }
-        // }
-        
-        if(!hasFired) return;
+        if (_isActive)
+        {
+            Vector3 dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+            _angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            float angleDelta = _lastAngle - _angle;
+            if (angleDelta >= -30f && angleDelta <= 30f)
+                _accumulatedAngle += _lastAngle - _angle;
+            _lastAngle = _angle;
+            if (_accumulatedAngle >= _minimumRequiredAngle || _accumulatedAngle <= -_minimumRequiredAngle)
+            {
+                Rotated = true;
+                _isActive = false;
+            }
+        }
+
+        if (!hasFired) return;
         Debug.Log(Mathf.Abs(cachedRotationZ - transform.rotation.z));
         if (Mathf.Abs(cachedRotationZ - transform.rotation.z) >= _minimumRequiredAngle)
         {
@@ -41,9 +41,9 @@ public class FullRotationCheck : MonoBehaviour
 
     public void StartNewCheckFromDirection(Vector3 direction)
     {
-        //_lastAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //_accumulatedAngle = 0;
-        //_isActive = true;
+        _lastAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        _accumulatedAngle = 0;
+        _isActive = true;
         cachedRotationZ = transform.rotation.z;
         hasFired = true;
         Rotated = false;
