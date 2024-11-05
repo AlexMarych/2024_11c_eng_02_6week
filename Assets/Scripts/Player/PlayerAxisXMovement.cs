@@ -9,7 +9,7 @@ public class PlayerAxisXMovement : MonoBehaviour
     [SerializeField] public float Gravity = 0.4f;
 
     private Rigidbody2D _rb;
-    private Vector2 velocity;
+    //private Vector2 velocity;
     private GroundCheck _groundCheck;
     private float InputHorizontal;
     private PlayerSFXController _playerSFXController;
@@ -38,27 +38,27 @@ public class PlayerAxisXMovement : MonoBehaviour
         _rb.velocity *= new Vector2(0.92f, 1f);
     }
 
-    private void MoveAxisX()
-    {
-        if (InputHorizontal != 0)
-        {
-            _rb.velocity = new Vector2(InputHorizontal * MoveSpeed, _rb.velocity.y);
-            isMoving = true;
+    //private void MoveAxisX()
+    //{
+    //    if (InputHorizontal != 0)
+    //    {
+    //        _rb.velocity = new Vector2(InputHorizontal * MoveSpeed, _rb.velocity.y);
+    //        isMoving = true;
             
-        }
-        else if (!_groundCheck.Grounded)
-        {
-            isMoving = false;
-        }
-        else
-        {
-            _rb.velocity = new Vector2(0f, _rb.velocity.y);
-            isMoving = false ;
-        }
-    }
+    //    }
+    //    else if (!_groundCheck.Grounded)
+    //    {
+    //        isMoving = false;
+    //    }
+    //    else
+    //    {
+    //        _rb.velocity = new Vector2(0f, _rb.velocity.y);
+    //        isMoving = false ;
+    //    }
+    //}
     
     public bool IsMoving()
     {
-        return isMoving;
+        return _rb.velocity.x != 0;
     }
 }
