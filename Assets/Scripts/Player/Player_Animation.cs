@@ -8,14 +8,14 @@ public class Player_Animation : MonoBehaviour
     private Rigidbody2D _rb;
     private Animator _animator;
     private float InputHorizontal;
-    private GroundCheck _check;
+    private PlayerController _check;
     private SpriteRenderer _spriteRenderer;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _check = GetComponent<GroundCheck>();
+        _check = GetComponent<PlayerController>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

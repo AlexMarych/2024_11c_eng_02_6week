@@ -45,9 +45,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: UI
     uniqueID: 3620413049
     locked: 0
@@ -77,4 +74,7 @@ TagManager:
     locked: 0
   - name: Trees
     uniqueID: 2463762319
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

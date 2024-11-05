@@ -24,12 +24,14 @@ public class CannonWeapon : MonoBehaviour
 
     void Shoot(Vector3 direction)
     {
-        if (_fullRotationCheck.Rotated)
-        {
-            _fullRotationCheck.StartNewCheckFromDirection(direction);
+        if (!_cannonSFXController || !_spawnProjectileWithVelocity) return;
+        
+        //if (_fullRotationCheck.Rotated)
+        //{
+            //_fullRotationCheck.StartNewCheckFromDirection(direction);
             _spawnProjectileWithVelocity.Spawn(direction);
             _cannonSFXController.PlayFire();
 
-        }
+        //}
     }
 }
