@@ -204,6 +204,15 @@ public class PlayerController : MonoBehaviour
         return grounded;
     }
 
+    public bool IsMoving()
+    {
+        return rb.velocity.x != 0;
+    }
+
+    public bool IsJumping()
+    {
+        return rb.velocity.y > 0;
+    }
 
     private struct FrameInput
     {
