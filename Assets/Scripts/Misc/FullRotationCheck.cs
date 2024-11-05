@@ -9,9 +9,6 @@ public class FullRotationCheck : MonoBehaviour
     [SerializeField] private float _minimumRequiredAngle;
     public bool Rotated;
 
-    private float cachedRotationZ;
-    private bool hasFired = false;
-
 
     void Update()
     {
@@ -29,14 +26,6 @@ public class FullRotationCheck : MonoBehaviour
                 _isActive = false;
             }
         }
-
-        if (!hasFired) return;
-        Debug.Log(Mathf.Abs(cachedRotationZ - transform.rotation.z));
-        if (Mathf.Abs(cachedRotationZ - transform.rotation.z) >= _minimumRequiredAngle)
-        {
-            Rotated = true;
-            hasFired = false;
-        }
     }
 
     public void StartNewCheckFromDirection(Vector3 direction)
@@ -44,8 +33,6 @@ public class FullRotationCheck : MonoBehaviour
         _lastAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         _accumulatedAngle = 0;
         _isActive = true;
-        cachedRotationZ = transform.rotation.z;
-        hasFired = true;
         Rotated = false;
     }
 }
