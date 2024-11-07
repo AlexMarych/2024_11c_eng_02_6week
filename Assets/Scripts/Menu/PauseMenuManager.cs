@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +15,7 @@ public class PauseMenuManager : MonoBehaviour
 
     private void Awake()
     {
-        _cursorManager = GameObject.FindGameObjectWithTag("Cursor");
+        _cursor = GameObject.FindGameObjectWithTag("Cursor").GetComponent<CursorManager>();
         _cannon = GameObject.FindGameObjectWithTag("Weapon");
         _pauseView.SetActive(false);
         _approvalView.SetActive(false);
@@ -31,16 +32,15 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Pause()
     {
-        _cursorManager.SetActive(false);
+        _cursor.SetDeffault();
         _cannon.SetActive(false);
         _pauseView.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
     }
-
     public void Resume()
     {
-        _cursorManager.SetActive(true);
+        _cursor.Start();
         _cannon.SetActive(true);
         _pauseView.SetActive(false);
         Time.timeScale = 1.0f;
