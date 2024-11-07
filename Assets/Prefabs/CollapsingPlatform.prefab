@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 2516652220702647452, guid: 4e9d0cc660d7b464084370b4917b818e, type: 3}
+  deactivatedTime: 2
 --- !u!1 &1754112332458721242
 GameObject:
   m_ObjectHideFlags: 0

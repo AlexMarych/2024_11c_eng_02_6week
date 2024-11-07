@@ -1,12 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class StepDetection : MonoBehaviour
 {
     [SerializeField] GameObject particles;
+	[SerializeField] float deactivatedTime = 2;
     private IEnumerator Break()
     {
         // Shake:
@@ -28,8 +27,11 @@ public class StepDetection : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
 
         Instantiate(particles, transform.parent.position, Quaternion.identity);
-        Destroy(transform.parent.gameObject);
-        yield return null;
+        transform.parent.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(deactivatedTime);
+
+		transform.parent.gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
