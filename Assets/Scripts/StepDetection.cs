@@ -6,6 +6,13 @@ public class StepDetection : MonoBehaviour
 {
     [SerializeField] GameObject particles;
 	[SerializeField] float deactivatedTime = 2;
+
+	private GameObject platformObject;
+
+	private void Start() {
+		platformObject = transform.childCount == 0 ? null : transform.GetChild(0).gameObject;
+	}
+
     private IEnumerator Break()
     {
         // Shake:
@@ -13,29 +20,31 @@ public class StepDetection : MonoBehaviour
         const int iterations = 4;
         for (var i = 0; i < iterations; i++)
         {
-            transform.parent.transform.position -= Vector3.up * (0.002f * (i + 1));
-            
-            var previousPosition = transform.parent.transform.position;
-            transform.parent.position += (Vector3)Random.insideUnitCircle * ((i + 1) * 0.006f); 
+			var platformTransform = platformObject.transform;
+
+            var previousPosition = platformTransform.position;
+            platformTransform.position += (Vector3)Random.insideUnitCircle * ((i + 1) * 0.01f); 
+
             yield return new WaitForSeconds(seconds / iterations / 2f);
             
-            transform.parent.transform.position += Vector3.left; 
-            transform.parent.position = previousPosition; 
+            platformTransform.position += Vector3.left; 
+            platformTransform.position = previousPosition; 
+
             yield return new WaitForSeconds(seconds / iterations / 2f);
         }
         
         yield return new WaitForSeconds(0.15f);
 
-        Instantiate(particles, transform.parent.position, Quaternion.identity);
-        transform.parent.gameObject.SetActive(false);
+        Instantiate(particles, transform.position, Quaternion.identity);
+		platformObject.SetActive(false);
 
         yield return new WaitForSeconds(deactivatedTime);
 
-		transform.parent.gameObject.SetActive(true);
+		platformObject.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        StartCoroutine(Break());
+		if (platformObject is not null && platformObject.activeSelf) StartCoroutine(Break());
     }
 }
