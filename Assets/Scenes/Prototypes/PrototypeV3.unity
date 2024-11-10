@@ -64474,7 +64474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3973055b26915a1498e7a0d18b2b3001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particles: {fileID: 0}
+  particles: {fileID: 2516652220702647452, guid: 4e9d0cc660d7b464084370b4917b818e, type: 3}
   deactivatedTime: 10
 --- !u!61 &1875422123
 BoxCollider2D:
