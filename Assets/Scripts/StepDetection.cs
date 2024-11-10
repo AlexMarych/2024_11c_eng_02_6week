@@ -36,8 +36,8 @@ public class StepDetection : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
 
         Instantiate(particles, transform.position, Quaternion.identity);
-		platformObject.SetActive(false);
 
+		platformObject.SetActive(false);
         yield return new WaitForSeconds(deactivatedTime);
 
 		platformObject.SetActive(true);
