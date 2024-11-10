@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class WeaponProjectile : MonoBehaviour
 {
+    [Header("Rocket jump Settings")]
+    public float explosionRadius = 5f;
+    public float explosionForce = 50f;
+    
+    [Header("Misc")]
     [SerializeField] private float radius = 1;
     [SerializeField] private float force = 50;
     public LayerMask PlayerLayer;
@@ -14,12 +19,11 @@ public class WeaponProjectile : MonoBehaviour
         var collider2Ds = Physics2D.OverlapCircleAll(transform.position, radius, PlayerLayer);
         foreach (Collider2D collider in collider2Ds)
         {
-            if (collider.TryGetComponent<PlayerController>(out var pc))
+            PlayerController player = collider.GetComponent<PlayerController>();
+            
+            if (player != null)
             {
-                //rb.AddForce(10f * force * (collider.transform.position - transform.position).normalized, ForceMode2D.Impulse);   
-                Vector2 direction = new Vector2(pc.transform.position.x - transform.position.x, pc.transform.position.y - transform.position.y);
-                
-                pc.SetFrameVelocity(direction.normalized * force);
+                player.ApplyExplosionForce(transform.position, explosionRadius, explosionForce);
                 
             }
         }

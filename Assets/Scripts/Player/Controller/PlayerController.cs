@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     public float GroundingForce = -1.5f; //A constant downward force applied while grounded. Helps with apex points
     public float CoyoteTime = .15f; //Coyote jump window
     
+    public float MaxRocketJumpHorizontalSpeed = 10f; // Maximum allowed horizontal speed after a rocket jump
+    public float MaxRocketJumpVerticalSpeed = 10f; // Maximum allowed horizontal speed after a rocket jump
+    
     
     public LayerMask GroundLayer;
     private bool cachedQueriesStartInColliders;
@@ -212,6 +215,32 @@ public class PlayerController : MonoBehaviour
     public bool IsJumping()
     {
         return rb.velocity.y > 0;
+    }
+    
+    public void ApplyExplosionForce(Vector2 explosionPosition, float explosionRadius, float explosionForce)
+    {
+        Vector2 playerPosition = rb.position;
+        Vector2 directionFromExplosion = playerPosition - explosionPosition;
+        float distance = directionFromExplosion.magnitude;
+
+        if (distance < explosionRadius)
+        {
+            Vector2 forceDirection = directionFromExplosion.normalized;
+            float forceMultiplier = 1 - (distance / explosionRadius); 
+            Vector2 force = forceDirection * explosionForce * forceMultiplier;
+
+            // Split the horizontal and vertical force components
+            float horizontalForce = force.x / 2;
+            float verticalForce = force.y;
+
+            if (frameVelocity.y > 0)
+            {
+                verticalForce *= 0;
+            }
+
+            // Apply the force to the player's velocity
+            SetFrameVelocity(new Vector2(horizontalForce, verticalForce));
+        }
     }
 
     private struct FrameInput
