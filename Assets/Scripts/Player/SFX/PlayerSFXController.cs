@@ -5,43 +5,36 @@ using UnityEngine;
 
 public class PlayerSFXController : MonoBehaviour
 {
-    public AudioSource Source_Run;
-    public AudioSource Source_Jump;
+    [SerializeField] private AudioSource _sourceRun;
+    [SerializeField] private AudioSource _sourceJump;
 
-    
     private PlayerController _movment_alt;
-    
-    //private PlayerJump _jump;
-    
-    //private PlayerAxisXMovement _run;
 
     private void Awake()
     {
         _movment_alt = GetComponent<PlayerController>();
-        //_jump = GetComponent<PlayerJump>();
-        //_run = GetComponent<PlayerAxisXMovement>();
     }
 
     public void PlayRun()
     {
-        if (!Source_Run.isPlaying && !Source_Jump.isPlaying)
+        if (!_sourceRun.isPlaying && !_sourceJump.isPlaying)
         {
-            Source_Run.Play();
+            _sourceRun.Play();
         }
     }
 
-    public void PlayJump() 
+    public void PlayJump()
     {
-        if (!Source_Jump.isPlaying)
+        if (!_sourceJump.isPlaying)
         {
-            Source_Run.Stop();
-            Source_Jump.Play();
+            _sourceJump.Play();
         }
+        
     }
 
     void Update()
     {
-        if (_movment_alt.IsMoving() && _movment_alt.IsGrounded())
+        if (_movment_alt.IsMoving() && _movment_alt.IsGroundedDelay())
         {
             PlayRun();
         }
@@ -51,8 +44,7 @@ public class PlayerSFXController : MonoBehaviour
         }
         else
         {
-            Source_Run.Stop();
-            Source_Jump.Stop();
+            _sourceRun.Stop();
         }
     }
 }
