@@ -16,20 +16,24 @@ public class Dialogue : MonoBehaviour
 		});
 	}
 
-	private string[] currentDialogue = null;
+    private bool isSpeaking;
+
+    private string[] currentDialogue = null;
 	private int index = 0;
 
 	private TMPro.TextMeshProUGUI text;
 
     void Start()
     {
-		text = transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
+       
+        text = transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
 		text.transform.gameObject.SetActive(false);
     }
 
 	public void Activate(string dialogueName) 
 	{
-		if (dialogue.TryGetValue(dialogueName, out currentDialogue))
+        isSpeaking = true;
+        if (dialogue.TryGetValue(dialogueName, out currentDialogue))
 
 		text.transform.gameObject.SetActive(true);
 		UpdateText();
@@ -37,7 +41,8 @@ public class Dialogue : MonoBehaviour
 
 	public void Deactivate() 
 	{
-		text.transform.gameObject.SetActive(false);
+        isSpeaking = false;
+        text.transform.gameObject.SetActive(false);
 		index = 0;
 	}
 
@@ -58,14 +63,21 @@ public class Dialogue : MonoBehaviour
 	{
 		if (currentDialogue == null) 
 		{
-			return;
+            
+            return;
 		}
 
 		if (Input.GetButtonUp("Submit"))
 		{
-			index += 1;
+            
+            index += 1;
 			UpdateText();
 		}
 	}
+
+    public bool IsSpeaking()
+    {
+        return isSpeaking;
+    }
 }
 

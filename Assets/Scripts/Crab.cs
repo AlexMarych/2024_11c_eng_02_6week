@@ -5,6 +5,7 @@ using UnityEngine;
 public class Crab : MonoBehaviour
 {
 	[SerializeField] private string dialogueName;
+	
 
 	private Dialogue dialogue;
 	void Start() 
@@ -21,4 +22,6 @@ public class Crab : MonoBehaviour
 	{
 		dialogue.Deactivate();
 	}
+
+	
 }
