@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FullRotationCheck : MonoBehaviour
 {
@@ -9,6 +11,16 @@ public class FullRotationCheck : MonoBehaviour
     [SerializeField] private float _minimumRequiredAngle;
     public bool Rotated;
 
+    [SerializeField] private Slider Slider;
+    [SerializeField] private Image Image;
+
+    private void Start()
+    {
+        if (Slider)
+        {
+            Slider.value = 0f;
+        }
+    }
 
     void Update()
     {
@@ -26,6 +38,11 @@ public class FullRotationCheck : MonoBehaviour
                 _isActive = false;
             }
         }
+
+        if (Slider)
+        {
+            Slider.value = 1f - Math.Abs(_accumulatedAngle / _minimumRequiredAngle);
+        }
     }
 
     public void StartNewCheckFromDirection(Vector3 direction)
@@ -34,5 +51,21 @@ public class FullRotationCheck : MonoBehaviour
         _accumulatedAngle = 0;
         _isActive = true;
         Rotated = false;
+        
+        if (Image)
+        {
+            Image.fillOrigin = GetFillOriginFromAngle(_lastAngle);
+        }
+    }
+    
+    private int GetFillOriginFromAngle(float angle)
+    {
+        return angle switch
+        {
+            >= 45 and <= 135 => 2,
+            < -135 or > 135 => 3,
+            >= -135 and < -45 => 0,
+            _ => 1
+        };
     }
 }

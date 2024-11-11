@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionRadius: 5
-  explosionForce: 55
+  explosionForce: 52
   radius: 1.5
   force: 35
   PlayerLayer:

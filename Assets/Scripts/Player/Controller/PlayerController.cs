@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 0.5f)]
     public float GrounderDistance = 0.05f; //Distance for grounded check raycast
     public float JumpPower = 36; //velocity of the jump
-    public float MaxSpeed = 14; //max horizontal speedd
+    public float MaxSpeed = 14; //max horizontal speed
     public float MinFallSpeed = 20; //min vertical speed
     public float MaxFallSpeed = 40; //max vertical speed
     public float Acceleration = 120; //ground horizontal acceleration
@@ -27,9 +27,6 @@ public class PlayerController : MonoBehaviour
     [Range(0f, -10f)]
     public float GroundingForce = -1.5f; //A constant downward force applied while grounded. Helps with apex points
     public float CoyoteTime = .15f; //Coyote jump window
-    
-    public float MaxRocketJumpHorizontalSpeed = 10f; // Maximum allowed horizontal speed after a rocket jump
-    public float MaxRocketJumpVerticalSpeed = 10f; // Maximum allowed horizontal speed after a rocket jump
     
     
     public LayerMask GroundLayer;
@@ -209,8 +206,8 @@ public class PlayerController : MonoBehaviour
 
     public bool IsMoving()
     {
-        return rb.velocity.x != 0;
-    }
+        return frameInput.Move.x != 0;
+    } 
 
     public bool IsJumping()
     {
@@ -230,17 +227,41 @@ public class PlayerController : MonoBehaviour
             Vector2 force = forceDirection * explosionForce * forceMultiplier;
 
             // Split the horizontal and vertical force components
-            float horizontalForce = force.x / 2;
+            float horizontalForce = force.x * 0.55f;
             float verticalForce = force.y;
+
+            if (verticalForce < 0)
+            {
+                verticalForce *= 0;
+            }
 
             if (frameVelocity.y > 0)
             {
                 verticalForce *= 0;
             }
+            
+            //Debug.Log(forrr);
 
             // Apply the force to the player's velocity
             SetFrameVelocity(new Vector2(horizontalForce, verticalForce));
         }
+    }
+    
+    public bool IsGroundedDelay(float delay = 1f)
+    {
+        float groundCounter = delay;
+        while (grounded)
+        {
+            if (groundCounter <= 0)
+            {
+                return true;
+            }
+            else
+            {
+                groundCounter -= Time.deltaTime;
+            }
+        }
+        return false;
     }
 
     private struct FrameInput
