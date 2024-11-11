@@ -15,7 +15,7 @@ public class TransferToSegment : MonoBehaviour
         GameObject anchor = GameObject.Find(_segmentName + "CameraAnchor");
         if (anchor != null && Camera.main.TryGetComponent<CameraMovement>(out var movement))
         {
-            movement.MoveToPosition = anchor.transform.position;
+            movement.MoveToTransform = anchor.transform;
         }
         
         GameObject segmentManager = GameObject.FindGameObjectWithTag("SegmentManager");
