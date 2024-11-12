@@ -12,6 +12,7 @@ TagManager:
   - SegmentManager
   - Pause
   - Cursor
+  - end
   layers:
   - Default
   - TransparentFX

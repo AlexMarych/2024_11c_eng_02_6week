@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/ManuScene.unity
     guid: 0dfb4376264c19d41950e72efaf2de58
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototypes/PrototypeV3.unity
     guid: 7a59090051ffd554385e7cb144f90ddc
+  - enabled: 1
+    path: Assets/Scenes/Prototypes/PrototypeV4.unity
+    guid: b34304dc9d93bde489c614657a83b76f
+  - enabled: 1
+    path: Assets/Scenes/ExitMenu.unity
+    guid: 5e210c0d63b8f6641aea4e6c031732ec
   m_configObjects: {}

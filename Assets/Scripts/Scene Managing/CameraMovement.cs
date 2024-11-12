@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+	public float moveSpeed = 0.35f;
 	public Transform MoveToTransform;
     void Start()
     {
@@ -15,7 +16,7 @@ public class CameraMovement : MonoBehaviour
 		transform.position = Vector3.Lerp(
 			transform.position, 
 			new Vector3(MoveToTransform.position.x, MoveToTransform.position.y, transform.position.z),
-			0.025f
-		);
+            moveSpeed
+        );
     }
 }

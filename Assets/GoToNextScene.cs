@@ -9,9 +9,11 @@ public class GoToNextScene : MonoBehaviour
 {
     public PlayableDirector director;
     public GameObject player;
+    public GameObject end;
     
     void Start()
     {
+        end = GameObject.FindGameObjectWithTag("end");
         director = GetComponent<PlayableDirector>();
     }
 
@@ -26,6 +28,7 @@ public class GoToNextScene : MonoBehaviour
         if(!director) return; 
         if(other.CompareTag("Player"))
         {
+            end.SetActive(true);
             other.gameObject.SetActive(false);
             player.SetActive(true);
             director.Play();
