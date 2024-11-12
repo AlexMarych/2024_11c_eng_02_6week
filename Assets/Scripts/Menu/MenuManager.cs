@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
@@ -12,6 +13,9 @@ public class MenuManager : MonoBehaviour
     
     private GameObject gofromView;
     private GameObject gotoView;
+
+    public AudioMixer audioMixer;
+    public float volumeApplied;
 
     private void Awake()
     {
@@ -24,6 +28,28 @@ public class MenuManager : MonoBehaviour
     {
         _mainView.SetActive(false);
         _newGameView.SetActive(true);
+    }
+
+    public void GoToSettings()
+    {
+        _mainView.SetActive(false);
+        _settingsView.SetActive(true);
+    }
+
+    public void GoToGame()
+    {
+        _settingsView.SetActive(false);
+        _mainView.SetActive(true);
+    }
+
+    public void Applay()
+    {
+        audioMixer.SetFloat("Volume", volumeApplied);
+    }
+
+    public void SetVolume(float volume) 
+    {
+        volumeApplied = volume;
     }
 
     //public void Back(string from, string to)
