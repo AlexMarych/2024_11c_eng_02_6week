@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 2516652220702647452, guid: 4e9d0cc660d7b464084370b4917b818e, type: 3}
-  deactivatedTime: 2
+  deactivatedTime: 4
 --- !u!61 &8291303239847115794
 BoxCollider2D:
   m_ObjectHideFlags: 0
