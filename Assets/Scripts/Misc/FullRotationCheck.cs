@@ -14,13 +14,7 @@ public class FullRotationCheck : MonoBehaviour
     [SerializeField] private Slider Slider;
     [SerializeField] private Image Image;
 
-    private void Start()
-    {
-        if (Slider)
-        {
-            Slider.value = 0f;
-        }
-    }
+    private bool wasActive = false;
 
     void Update()
     {
@@ -37,11 +31,14 @@ public class FullRotationCheck : MonoBehaviour
                 Rotated = true;
                 _isActive = false;
             }
+
+            wasActive = true;
         }
 
         if (Slider)
         {
             Slider.value = 1f - Math.Abs(_accumulatedAngle / _minimumRequiredAngle);
+            if(!wasActive) {Slider.value = Slider.minValue;}
         }
     }
 
