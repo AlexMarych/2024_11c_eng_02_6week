@@ -28,11 +28,11 @@ public class GoToNextScene : MonoBehaviour
         if(!director) return; 
         if(other.CompareTag("Player"))
         {
-            end.SetActive(true);
             other.gameObject.SetActive(false);
             player.SetActive(true);
             director.Play();
             StartCoroutine(NextScene());
         }
+        end.SetActive(true);
     }
 }

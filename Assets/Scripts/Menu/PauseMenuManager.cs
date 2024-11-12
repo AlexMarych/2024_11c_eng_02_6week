@@ -33,7 +33,8 @@ public class PauseMenuManager : MonoBehaviour
     public void Pause()
     {
         _cursor.SetDeffault();
-        _cannon.SetActive(false);
+        if (_cannon != null) 
+            _cannon.SetActive(false);
         _pauseView.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -41,7 +42,8 @@ public class PauseMenuManager : MonoBehaviour
     public void Resume()
     {
         _cursor.Start();
-        _cannon.SetActive(true);
+        if (_cannon != null)
+            _cannon.SetActive(true);
         _pauseView.SetActive(false);
         Time.timeScale = 1.0f;
         isPaused = false;
